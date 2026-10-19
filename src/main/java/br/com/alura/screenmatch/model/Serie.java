@@ -21,7 +21,7 @@ public class Serie {
     private Integer totalTemporadas;
     private Double avaliacao;
 
-    @Transient
+    @OneToMany(mappedBy = "serie")
     private List<Episodio> episodios = new ArrayList<>();
 
     public Serie(){}
