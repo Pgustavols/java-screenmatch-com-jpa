@@ -3,6 +3,9 @@ package br.com.alura.screenmatch.model;
 import br.com.alura.screenmatch.service.ConsultaMyMemory;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="series")
 public class Serie {
@@ -17,6 +20,9 @@ public class Serie {
     private String sinopse;
     private Integer totalTemporadas;
     private Double avaliacao;
+
+    @Transient
+    private List<Episodio> episodios = new ArrayList<>();
 
     public Serie(DadosSerie dadosSerie){
         this.titulo = dadosSerie.titulo();
